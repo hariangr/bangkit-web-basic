@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Gratitude</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/article.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-header">
+          <h3>Gratitude Daily</h3>
+          <div id="account-avatar">
+            <ul id="dropdown">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Account</a></li>
+              <hr />
+              <li id="logout-btn">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="wigf-container">
+        <div class="wigf">
+          <textarea
+            name=""
+            placeholder="5 things that I am grateful for today"
+            id="wigf-in"
+            rows="5"
+          ></textarea>
+          <div class="wigf-btns">
+            <div>
+              <span data-amaze="1" class="emoji">🥲</span>
+              <span data-amaze="2" class="emoji">😕</span>
+              <span data-amaze="3" class="emoji selected-moji">🙂</span>
+              <span data-amaze="4" class="emoji">😀</span>
+              <span data-amaze="5" class="emoji">🤣</span>
+            </div>
+            <button id="submit-btn">Call it a day</button>
+          </div>
+        </div>
+
+        <article id="gritude-template" class="gritude">
+          <div class="gritude-header">
+            <div
+              style="
+                width: 3rem;
+                height: 3rem;
+                background-color: black;
+                border-radius: 100%;
+              "
+            ></div>
+
+            <div class="gratitude-title">
+              <h2>Jan 5th, 2022</h2>
+              <p>It was rad!</p>
+            </div>
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex
+            quia saepe explicabo dolore! Eaque maiores deleniti autem iure
+            laboriosam aut possimus aperiam perferendis atque, corporis tenetur
+            ea repellendus! Laudantium.
+          </div>
+        </article>
+
+        <!-- <article>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia
+          saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam
+          aut possimus aperiam perferendis atque, corporis tenetur ea
+          repellendus! Laudantium.
+        </article>
+        <article>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia
+          saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam
+          aut possimus aperiam perferendis atque, corporis tenetur ea
+          repellendus! Laudantium.
+        </article> -->
+      </div>
+
+      <aside>
+        <div id="me-img">
+          <div
+            style="
+              width: 5rem;
+              height: 5rem;
+              background-color: black;
+              border-radius: 100%;
+            "
+          ></div>
+        </div>
+        <h4>Gusti Bagus Dwi Anugrah Harimurti</h4>
+        <blockquote class="bq-profile">
+          Life can be tough sometimes, but let's not forgot the little things
+          that warm our heart
+        </blockquote>
+      </aside>
+    </main>
+
+    <footer>&copy; Hari Anugrah</footer>
+  </body>
+</html>

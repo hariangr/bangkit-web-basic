@@ -1,0 +1,262 @@
+:root {
+  --main-width: 640px;
+  --text-primary: white;
+  --border-radius: 12px;
+  --dropdown-menu-gap: 6px;
+
+  --color-background: #ffeddb;
+  --color-background-content: #edcdbb;
+  --color-third: #e3b7a0;
+  --color-primary: #bf9270;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+/* Nav */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  height: 4rem;
+  background-color: var(--color-third);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.358);
+}
+
+nav {
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.nav-header {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--main-width);
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav #account-avatar,
+h3 {
+  align-self: center;
+}
+/* nav li {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+}
+nav li a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+nav li:hover {
+  background-color: gray;
+  cursor: pointer;
+  border-radius: 6px;
+} */
+
+#account-avatar {
+  position: relative;
+  height: 2.5rem;
+  width: 2.5rem;
+  justify-self: center;
+  background-color: black;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#dropdown {
+  display: none;
+  /* display: flex; */
+  background-color: white;
+  position: absolute;
+  width: 12rem;
+  margin-top: 0.4rem;
+  right: 0;
+  top: 100%;
+  z-index: 100;
+  flex-direction: column;
+
+  border-radius: var(--border-radius);
+  padding-bottom: var(--dropdown-menu-gap);
+  padding-top: var(--dropdown-menu-gap);
+  padding-left: var(--dropdown-menu-gap);
+  padding-right: var(--dropdown-menu-gap);
+
+  box-shadow: 4px 4px black;
+  gap: 6px;
+}
+#dropdown a {
+  text-decoration: none;
+  color: black;
+}
+#dropdown li {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  /* margin: var(--dropdown-menu-gap); */
+  /* margin-bottom: 0; */
+  cursor: pointer;
+}
+#dropdown li:hover {
+  background-color: var(--color-background);
+}
+
+/* #dropdown  */
+
+/* End Nav */
+
+/* Main */
+main {
+  padding: 1rem 1rem;
+  max-width: var(--main-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+main article {
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+}
+/* End Main */
+
+/* What I grateful for */
+
+.wigf {
+  flex-direction: column;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.wigf .wigf-btns {
+  padding-top: 0.4rem;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wigf .emoji {
+  padding: 0.4rem;
+  border-radius: 14px;
+  padding: 0.2rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.wigf .emoji:hover {
+  border-bottom: solid black 4px;
+}
+.selected-moji {
+  border-bottom: solid var(--color-primary) 4px;
+}
+
+.wigf textarea {
+  padding: 1rem;
+  width: 100%;
+  display: block;
+  border-radius: var(--border-radius);
+  outline: 2px dashed;
+  background-color: var(--color-background);
+}
+.wigf textarea:focus {
+  background-color: var(--color-background-content);
+}
+
+.wigf button {
+  margin-top: 12px;
+  padding: 12px 18px;
+  align-self: flex-end;
+  font-weight: bold;
+  box-shadow: 2px 2px 0 black;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+/* End wigf */
+
+/* Profile side */
+.bq-profile {
+  margin-top: 1rem;
+}
+.bq-profile::before,
+.bq-profile::after {
+  content: '"';
+}
+
+main aside {
+  width: 100%;
+  left: 100%;
+  top: 0;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#me-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* End Profile Side */
+
+/* Footer */
+footer {
+  padding: 1rem;
+  align-content: center;
+  background-color: lightpink;
+}
+/* End Footer */
+
+/* Gratitude Article */
+.gritude {
+  margin-bottom: 1.6rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.gritude:not(:last-child) {
+  border-bottom: dashed 1px;
+}
+.gritude .gritude-header {
+  display: flex;
+  gap: 0.8rem;
+  /* margin-top: 12px; */
+  align-items: flex-end;
+}
+.gratitude-title {
+  margin-top: -4px;
+}
+
+/* End Gratitude Article */
+
+@media screen and (min-width: 1280px) {
+  main aside {
+    align-items: center;
+    position: absolute;
+    max-width: 15rem;
+    margin-left: 1rem;
+    text-align: left;
+    padding: 1rem 0;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  #me-img {
+    display: block;
+    justify-content: left;
+  }
+}
