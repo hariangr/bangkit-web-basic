@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/article.js" defer></script>
+    <script src="assets/js/article_placeholder.js" defer></script>
   </head>
   <body>
     <header>
@@ -19,7 +20,7 @@
               <li><a href="#">Profile</a></li>
               <li><a href="#">Account</a></li>
               <hr />
-              <li id="logout-btn">Logout</li>
+              <li id="logout-btn">Clear Journal (Keep placeholder)</li>
             </ul>
           </div>
         </div>
@@ -46,30 +47,6 @@
             <button id="submit-btn">Call it a day</button>
           </div>
         </div>
-
-        <article id="gritude-template" class="gritude">
-          <div class="gritude-header">
-            <div
-              style="
-                width: 3rem;
-                height: 3rem;
-                background-color: black;
-                border-radius: 100%;
-              "
-            ></div>
-
-            <div class="gratitude-title">
-              <h2>Jan 5th, 2022</h2>
-              <p>It was rad!</p>
-            </div>
-          </div>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex
-            quia saepe explicabo dolore! Eaque maiores deleniti autem iure
-            laboriosam aut possimus aperiam perferendis atque, corporis tenetur
-            ea repellendus! Laudantium.
-          </div>
-        </article>
 
         <!-- <article>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia
@@ -98,11 +75,36 @@
         </div>
         <h4>Gusti Bagus Dwi Anugrah Harimurti</h4>
         <blockquote class="bq-profile">
-          Life can be tough sometimes, but let's not forgot the little things
+          Life can be tough sometimes, but let's not forget the little things
           that warm our heart
         </blockquote>
       </aside>
     </main>
+
+    <article id="gritude-template" class="gritude template" style="display: none">
+      <div class="gritude-header">
+        <!-- <div
+          style="
+            width: 3rem;
+            height: 3rem;
+            background-color: black;
+            border-radius: 100%;
+          "
+        ></div> -->
+        <div id="emojitude">🤣</div>
+
+        <div class="gratitude-title">
+          <h2 id="gritude-date">Jan 5th, 2022</h2>
+          <p id="radness-desc">It was rad!</p>
+        </div>
+      </div>
+      <div id="bq-prof" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia
+        saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam aut
+        possimus aperiam perferendis atque, corporis tenetur ea repellendus!
+        Laudantium.
+      </div>
+    </article>
 
     <footer>&copy; Hari Anugrah</footer>
   </body>

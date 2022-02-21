@@ -1,24 +1,82 @@
-let contents = [
-  {
-    amazingness: 5,
-    timestamp: new Date(2022, 2, 21),
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam aut possimus aperiam perferendis atque, corporis tenetur ea repellendus! Laudantium.",
-  },
-];
+let contents = [];
 
 const KEY_CONTENTS = "some_amazing_local_content";
 let selected_amazeness = 3;
+const RADNESS = [
+  { emoji: 0x1f615, desc: "It was bad" },
+  { emoji: 0x1f615, desc: "meh" },
+  { emoji: 0x1f642, desc: "It was okay" },
+  { emoji: 0x1f600, desc: "Something good happened!" },
+  { emoji: 0x1f923, desc: "IT WAS RAD!!!!!!" },
+];
+
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 window.addEventListener("DOMContentLoaded", (event) => {
   const gritudeTemplate = document.querySelector("#gritude-template");
   const wigfContainer = document.querySelector("#wigf-container");
 
   // Load content from LocalStorage, append to contents
+  const updateContentsView = () => {
+    // Clear contents first
+    document.querySelectorAll(".template-added").forEach((it) => {
+      console.log(it);
+      it.parentNode.removeChild(it);
+    });
 
-  for (let i = 0; i < 10; i++) {
-    wigfContainer.appendChild(gritudeTemplate.cloneNode(true));
+    for (const it of contents.sort((a, b) => b.timestamp - a.timestamp)) {
+      const newNode = gritudeTemplate.cloneNode(true);
+      newNode.style.display = "block";
+      newNode.querySelector("#radness-desc").innerText =
+        RADNESS[it.amazingness - 1].desc;
+      newNode.querySelector("#emojitude").innerText = String.fromCodePoint(
+        RADNESS[it.amazingness - 1].emoji
+      );
+      newNode.querySelector("#bq-prof").innerText = it.content;
+      newNode.querySelector("#gritude-date").innerText =
+        MONTHS[it.timestamp.getMonth()] +
+        " " +
+        it.timestamp.getDate() +
+        ", " +
+        it.timestamp.getFullYear() +
+        " " +
+        String(it.timestamp.getHours()).padStart(2, '0') +
+        ":" +
+        String(it.timestamp.getMinutes()).padStart(2, '0')
+      newNode.classList.add("template-added");
+      wigfContainer.appendChild(newNode);
+    }
+  };
+
+  // Loader contents
+  try {
+    if (localStorage) {
+      contents = JSON.parse(localStorage.getItem(KEY_CONTENTS));
+      contents = contents.map((it) => {
+        it.timestamp = new Date(it.timestamp);
+        return it;
+      });
+    }
+    if (contents.length == 0) {
+      contents = articles_placeholder;
+    }
+  } catch (error) {
+    contents = articles_placeholder;
   }
+  updateContentsView();
 
   const dropdownMenu = document.getElementById("dropdown");
   const dropdownBtn = document.getElementById("account-avatar");
@@ -33,20 +91,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   document.getElementById("logout-btn").addEventListener("click", (e) => {
-    alert("Your journal have been erased");
     if (localStorage) {
-      localStorage.removeItem("KEY_CONTENTS");
+      localStorage.removeItem(KEY_CONTENTS);
     }
+    alert("Your journal have been erased");
+    location.reload();
   });
 
   document.getElementById("submit-btn").addEventListener("click", (e) => {
     contents.push({
       amazingness: selected_amazeness,
-      timestamp: Date.now(),
+      timestamp: new Date(),
       content: wigfInput.value,
     });
 
-    console.log(contents);
+    if (localStorage) {
+      // Let's not get into performance things shall we
+      localStorage.setItem(KEY_CONTENTS, JSON.stringify(contents));
+    }
+
+    // console.log(contents);
+    updateContentsView();
   });
 
   document.querySelectorAll(".emoji").forEach((it) => {

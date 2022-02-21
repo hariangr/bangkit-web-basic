@@ -82,7 +82,7 @@ nav li:hover {
   /* display: flex; */
   background-color: white;
   position: absolute;
-  width: 12rem;
+  width: 18rem;
   margin-top: 0.4rem;
   right: 0;
   top: 100%;
@@ -123,11 +123,17 @@ main {
   max-width: var(--main-width);
   margin: 0 auto;
   position: relative;
+  min-height: 100vh;
 }
 
 main article {
   margin-bottom: 1.5rem;
   line-height: 1.5rem;
+}
+
+#emojitude {
+  font-size: 3rem;
+  padding-bottom: 0.7rem;
 }
 /* End Main */
 
@@ -137,7 +143,7 @@ main article {
   flex-direction: column;
   display: flex;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .wigf .wigf-btns {
   padding-top: 0.4rem;
