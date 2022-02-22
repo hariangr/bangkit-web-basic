@@ -11,18 +11,18 @@ const articles_placeholder = [
     amazingness: 2,
     timestamp: new Date(2022, 1, 19, 8, 20),
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam aut possimus aperiam perferendis atque, corporis tenetur ea repellendus! Laudantium.",
+      "HTML and CSS are hard, especially without frontend library and my usual toolkit.",
   },
   {
     amazingness: 4,
     timestamp: new Date(2022, 1, 18, 6, 29),
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam aut possimus aperiam perferendis atque, corporis tenetur ea repellendus! Laudantium.",
+      "Google Fonts are amazing! Chrome are amazing! At least I got my cat purring on my lap, and my food still delicious.",
   },
   {
     amazingness: 5,
     timestamp: new Date(2022, 1, 17, 4, 20),
     content:
-      "Loremaaaaaaa ipsum dolor sit amet, consectetur adipisicing elit. Sit ex quia saepe explicabo dolore! Eaque maiores deleniti autem iure laboriosam aut possimus aperiam perferendis atque, corporis tenetur ea repellendus! Laudantium.",
+      "Lmao. TakTikTuk is amazing for content discovery\nNeed some more content idea, but glad I put myself out there.",
   },
 ];

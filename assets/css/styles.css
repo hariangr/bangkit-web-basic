@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Quicksand:wght@300;700&display=swap');
+
 :root {
   --main-width: 640px;
   --text-primary: white;
@@ -8,6 +10,7 @@
   --color-background-content: #edcdbb;
   --color-third: #e3b7a0;
   --color-primary: #bf9270;
+  font-family: 'Quicksand', sans-serif;
 }
 
 * {
@@ -20,6 +23,11 @@ body {
   background-color: var(--color-background);
 }
 
+h3 {
+  font-family: 'Inspiration', cursive;
+  font-size: 1.5rem;
+}
+
 /* Nav */
 
 header {
@@ -27,6 +35,7 @@ header {
   top: 0;
   z-index: 90;
   height: 4rem;
+  font-weight: 700;
   background-color: var(--color-third);
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.358);
 }
@@ -67,14 +76,31 @@ nav li:hover {
   border-radius: 6px;
 } */
 
+.icon-dropdown {
+  height: 3rem;
+  width: 3rem;
+  /* background-color: var(--color-background-content); */
+  border-radius: 100%;
+  padding: 5px;
+  border-right: solid var(--color-primary) 4px;
+  border-bottom: solid var(--color-primary) 4px;
+}
+
 #account-avatar {
   position: relative;
   height: 2.5rem;
   width: 2.5rem;
+  
   justify-self: center;
-  background-color: black;
+  /* background-color: black; */
   border-radius: 100%;
   cursor: pointer;
+}
+
+.profilepic {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
 }
 
 #dropdown {
@@ -239,6 +265,7 @@ footer {
   display: flex;
   gap: 0.8rem;
   /* margin-top: 12px; */
+  margin-bottom: 0.6rem;
   align-items: flex-end;
 }
 .gratitude-title {
